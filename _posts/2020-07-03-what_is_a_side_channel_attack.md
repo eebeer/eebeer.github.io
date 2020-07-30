@@ -5,10 +5,14 @@ categories: hardware_security
 ---
 Original post: https://www.wired.com/story/what-is-side-channel-attack/
 
-```현대 사이버시큐리티```
-<details>
-    <summary> 원본보기 </summary>
+현대 cybersecurity는 컴퓨터가 비밀을 지켜줄것을 바탕으로 합니다. 하지만 컴퓨터는 마치 포커 플레이어 처럼 - 좋은 카드를 들면 그들의 눈동자가 움직이는거 처럼- 무언가를 말하고 있습니다. 그리고 그렇게 의도하지 않았던 신호들을 컴퓨터로 부터 읽어낼수 있는 해커들은 그 신호들로 부터 컴퓨터 안에 있는 비밀을 알아낼수 있습니다. 이를 부채널 공격 (side channel attack) 이라고 부릅니다.
 
-```MODERN CYBERSECURITY DEPENDS on machines keeping secrets. But computers, like poker-playing humans, have tells. They flit their eyes when they've got a good hand, or raise an eyebrow when they're bluffing—or at least, the digital equivalent. And a hacker who learns to read those unintended signals can extract the secrets they contain, in what's known as a "side channel attack."```
+부채널 공격은 컴퓨터가 끈임없이 물리적으로 내놓는 정보들의 패턴을 이용합니다. 예를 들어 컴퓨터 모니터나 하드 드라이브에서 나오는 전자파가 있습니다. 화면에 혹은 디스크 드라이브에 띄워지거나 읽히는 정보에 따라서 그 전자파가 미세하게 달라집니다. 또한 컴퓨터는 특정 프로세스를 수행할때 서로 다른 파워를 소모합니다. 또 키보드의 소리를 바탕으로 유저의 패스워드를 알아낼수도 있습니다.
 
-</details>
+"보통 알고리즘을 개발할때 우리는 입력과 출력을 생각합니다. 우리는 그 프로그램이 실행할 당시 그 외에 것들에 대해선 생각하지 않습니다." 부채널 공격을 연구하는 미시건 대학교의 교수 Daniel Genkin는 말하길 "하지만 컴퓨터는 종이위에서 동작하지 않습니다. 컴퓨터는 물리위에서 동작합니다. 종이에서 물리로 넘어올때, 컴퓨터의 연산은 많은 종류의 물리적 현상을 유발하게 됩니다: 시간, 파워, 소음. 부채널 공격은 이 들 중 한가지 특성을 탐색하여 더 많은 정보를 알아내고 그 알고리즘에 있는 비밀을 알아냅니다.
+
+충분히 똑똑한 해커라면 이렇게 의도하지 않게 새어나오는 정보들을 이용해서 원래는 알지 못해야 할 내용을 알수 있습니다. 컴퓨터는 시대가 흐르면서 점점 더 복잡해져가고 보다 물리적 한계에 다가간 컴퓨터 부속품들은 여러 방면으로 의도치 않은 정보들을 유출하고 있어서 부채널 공격들은 유일하게 점점 더 그 양이 방대해져가고 막기 어려운 공격이 되어가고 있습니다. 멀리 볼것도 없이 최근 2년간 AMD나 Intel이 겪었던 버그들: Meltdown, Spectre, Fallout, RIDL, Zombieload들 모두 부채널 공격이 보안화 되어있는 정보를 빼내는데 사용되었습니다.
+
+가장 간단한 부채널공격에 대한 예시는 도둑이 청진기를 이용해서 금고를 돌려가며 소리를 들으면서 비밀번호를 알아내는것입니다. 금고는 사용자에게 비밀번호를 입력 받아서 이것이 맞는지 틀리는지만 알려주게 설계되어있습니다. 하지만 금고 내부의 물리적, 기계적 구조로 인한 소리와 촉각적 느낌은 side channel (부채널) 정보입니다. 금고털이범은 이러한 의도치 않은 정보를 바탕으로 비밀번호를 알아냅니다.
+
+부채널 암호분석 (Side channel cryptanalysis)는 1998년도에 UC 버클리에서 나온 논문에 처음 소개 되었습니다. 하지만 일반적인 부채널 공격에 대한 내용은 더욱 일찍 소개 되었습니다. 가장 잘 알려진 악명높은 부채널 공격은 Tempest라고 NSA가 부르는 공격입니다. 1943년 벨 연구소는 
